@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steven - Personal Portfolio</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Devicon for Programming Language Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/devicon@2.15.1/css/devicon.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Inline CSS -->
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f7fc;
+            padding-top: 80px;
+        }
+
+        /* 導航欄 */
+        .navbar {
+            background-color: #1a1a2e;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar-brand, .nav-link {
+            color: #ffffff !important;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #00d4ff !important;
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, #4a00e0, #8e2de2);
+            color: white;
+            padding: 120px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            z-index: 1;
+        }
+
+        .hero-section h1 {
+            font-size: 3.5rem;
+            font-weight: 600;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        .hero-section p {
+            font-size: 1.25rem;
+            line-height: 1.8;
+            max-width: 700px;
+            margin: 20px auto;
+            animation: fadeInUp 1s ease-out 0.3s;
+            animation-fill-mode: backwards;
+        }
+
+        .hero-section .btn {
+            padding: 12px 30px;
+            font-size: 1.1rem;
+            border-radius: 25px;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .hero-section .btn:hover {
+            transform: scale(1.05);
+            background-color: #00d4ff;
+            color: #1a1a2e;
+        }
+
+        /* Portfolio Section */
+        .portfolio-section {
+            padding: 80px 0;
+            background-color: #ffffff;
+        }
+
+        .portfolio-card {
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .portfolio-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .portfolio-card img {
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .portfolio-card .card-body {
+            padding: 20px;
+        }
+
+        .portfolio-card .btn {
+            border-radius: 20px;
+            padding: 10px 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Skills Section */
+        .skills-section {
+            background-color: #f4f7fc;
+            padding: 80px 0;
+        }
+
+        .skills-section h2 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 40px;
+            color: #1a1a2e;
+        }
+
+        .skill-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .skill-icon:hover {
+            transform: scale(1.15);
+        }
+
+        .skill-icon div {
+            background-color: #ffffff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 50%;
+            width: 90px;
+            height: 90px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+        }
+
+        .skill-icon img {
+            width: 40px;
+            height: 40px;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background-color: #e9ecef;
+            padding: 80px 0;
+        }
+
+        .contact-section .btn {
+            border-radius: 20px;
+            padding: 12px 30px;
+            margin: 10px;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .contact-section .btn:hover {
+            transform: scale(1.05);
+            background-color: #00d4ff;
+            color: #1a1a2e;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a1a2e;
+            color: white;
+            padding: 30px 0;
+        }
+
+        footer a {
+            color: #00d4ff;
+            margin: 0 10px;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #ffffff;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .hero-section h1 {
+                font-size: 2.5rem;
+            }
+            .hero-section p {
+                font-size: 1rem;
+            }
+            .portfolio-card img {
+                height: 150px;
+            }
+            .skill-icon div {
+                width: 70px;
+                height: 70px;
+            }
+            .skill-icon i, .skill-icon img {
+                font-size: 2rem !important;
+                width: 30px !important;
+                height: 30px !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 導航欄 -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Steven</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#portfolio">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container position-relative" style="z-index: 2;">
+            <img src="/images/profile.jpg" alt="Steven Photo" class="rounded-circle mb-4" style="width: 160px; height: 160px; object-fit: cover; border: 4px solid #ffffff; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
+            <h1>Hello, I'm Steven</h1>
+            <p>
+                My name is Steven, and I am a Computer and Data Engineering graduate. I am a driven and detail-oriented individual with a passion for technology and a desire to gain practical experience in the industry. Throughout my academic career, I have acquired a strong foundation in computer science, programming languages, and data analysis techniques.
+            </p>
+            <a href="#portfolio" class="btn btn-light mt-3">View My Work</a>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio-section">
+        <div class="container">
+            <h2 class="text-center mb-5">My Portfolio</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card portfolio-card">
+                        <img src="/images/smart-health.jpg" class="card-img-top" alt="Smart Health Monitoring">
+                        <div class="card-body">
+                            <h5 class="card-title">Smart Health Monitoring</h5>
+                            <p class="card-text">Developed a system to monitor human eyes' irises and pupils, involving literature review, experiment design, data collection, and statistical hypothesis testing using R.</p>
+                            <a href="#" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card portfolio-card">
+                        <img src="/images/telemedical.jpg" class="card-img-top" alt="Elderly Health Telemedical System">
+                        <div class="card-body">
+                            <h5 class="card-title">Elderly Health Telemedical System</h5>
+                            <p class="card-text">Designed an embedded system for remote elderly healthcare, measuring vital signs (heart rate, blood pressure, etc.) with OLED, e-paper, and RFID integration.</p>
+                            <a href="#" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card portfolio-card">
+                        <img src="/images/image-recognition.jpg" class="card-img-top" alt="Image Recognition for Growth Rate">
+                        <div class="card-body">
+                            <h5 class="card-title">Image Recognition for Growth Rate</h5>
+                            <p class="card-text">Built a deep learning model for plant growth measurement, using image segmentation for stems and leaves with PyTorch and TensorFlow.</p>
+                            <a href="#" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card portfolio-card">
+                        <img src="/images/customer-analysis.jpg" class="card-img-top" alt="Customer Analysis System">
+                        <div class="card-body">
+                            <h5 class="card-title">Customer Analysis System</h5>
+                            <p class="card-text">Developed a retail analysis system using Intel RealSense for 3D store modeling, face tracking, and heatmap generation with Python, OpenCV, and MediaPipe.</p>
+                            <a href="#" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section">
+        <div class="container">
+            <h2 class="text-center mb-5">My Skills</h2>
+            <div class="row text-center">
+                <!-- Python -->
+                <div class="col-md-2 col-4 mb-4 skill-icon">
+                    <div>
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original-wordmark.svg" alt="Python" />
+                    </div>
+                </div>
+                <!-- C++ -->
+                <div class="col-md-2 col-4 mb-4 skill-icon">
+                    <div>
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg" alt="C++" />
+                    </div>
+                </div>
+                <!-- Java -->
+                <div class="col-md-2 col-4 mb-4 skill-icon">
+                    <div> 
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original-wordmark.svg" alt="Java" />
+                    </div>
+                </div>
+                <!-- R -->
+                <div class="col-md-2 col-4 mb-4 skill-icon">
+                    <div>
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/r/r-original.svg" alt="R" />
+                    </div>
+                </div>
+                <!-- SQL -->
+                <div class="col-md-2 col-4 mb-4 skill-icon">
+                    <div>
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azuresqldatabase/azuresqldatabase-original.svg" alt="SQL" />
+                    </div>
+                </div>
+                <!-- HTML -->
+                <div class="col-md-2 col-4 mb-4 skill-icon">
+                    <div>
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original-wordmark.svg" alt="HTML" />
+                    </div>
+                </div>
+                <!-- JavaScript -->
+                <div class="col-md-2 col-4 mb-4 skill-icon">
+                    <div>
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="JavaScript" />
+                    </div>
+                </div>
+                <!-- PyTorch -->
+                <div class="col-md-2 col-4 mb-4 skill-icon">
+                    <div>
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pytorch/pytorch-original-wordmark.svg" alt="PyTorch" />
+                    </div>
+                </div>
+                <!-- TensorFlow -->
+                <div class="col-md-2 col-4 mb-4 skill-icon">
+                    <div>
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tensorflow/tensorflow-original-wordmark.svg" alt="TensorFlow" />
+                    </div>
+                </div>
+                <!-- AWS -->
+                <div class="col-md-2 col-4 mb-4 skill-icon">
+                    <div>
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="text-center mb-5">Get in Touch</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-6 text-center">
+                    <img src="/images/profile-contact.jpg" alt="Contact Photo" class="rounded-circle mb-4" style="width: 120px; height: 120px; object-fit: cover; border: 3px solid #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.2);">
+                    <p>Feel free to reach out to me via email or follow me on LinkedIn!</p>
+                    <div>
+                        <a href="mailto:sintsun01@gmail.com" class="btn btn-primary">
+                            <i class="fas fa-envelope me-2"></i>Email Me
+                        </a>
+                        <a href="https://www.linkedin.com/in/sin-tsun-tang-291676268/"
