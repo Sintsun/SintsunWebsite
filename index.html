@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steven - Personal Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/devicon@2.15.1/css/devicon.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Existing CSS with updates for portfolio card proportions */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f7fc;
+            padding-top: 80px;
+        }
+
+        .navbar {
+            background-color: #1a1a2e;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar-brand, .nav-link {
+            color: #ffffff !important;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: #00d4ff !important;
+            transform: translateY(-2px);
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, #4a00e0, #8e2de2);
+            color: white;
+            padding: 120px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            z-index: 1;
+        }
+
+        .hero-section h1 {
+            font-size: 3.5rem;
+            font-weight: 600;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        .hero-section p {
+            font-size: 1.25rem;
+            line-height: 1.8;
+            max-width: 700px;
+            margin: 20px auto;
+            animation: fadeInUp 1s ease-out 0.3s;
+            animation-fill-mode: backwards;
+        }
+
+        .hero-section .btn {
+            padding: 12px 30px;
+            font-size: 1.1rem;
+            border-radius: 25px;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .hero-section .btn:hover {
+            transform: scale(1.05);
+            background-color: #00d4ff;
+            color: #1a1a2e;
+        }
+
+        .portfolio-section {
+            padding: 80px 0;
+            background-color: #ffffff;
+        }
+
+        .portfolio-card {
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .portfolio-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .portfolio-card img {
+            width: 100%;
+            aspect-ratio: 4 / 3; /* Adjust this ratio based on your image proportions */
+            object-fit: cover; /* Maintains image quality without distortion */
+        }
+
+        .portfolio-card .card-body {
+            padding: 20px;
+        }
+
+        .portfolio-card .card-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .portfolio-card .card-text {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .portfolio-card .text-muted {
+            font-size: 0.9rem;
+            margin-top: 10px;
+        }
+
+        .portfolio-card .btn {
+            border-radius: 20px;
+            padding: 10px 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .skills-section {
+            background-color: #f4f7fc;
+            padding: 80px 0;
+        }
+
+        .skills-section h2 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 40px;
+            color: #1a1a2e;
+        }
+
+        .skill-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .skill-icon:hover {
+            transform: scale(1.15);
+        }
+
+        .skill-icon div {
+            background-color: #ffffff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 50%;
+            width: 90px;
+            height: 90px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+        }
+
+        .skill-icon img {
+            width: 40px;
+            height: 40px;
+        }
+
+        .skill-icon p {
+            font-size: 0.9rem;
+            color: #1a1a2e;
+            margin-top: 10px;
+        }
+
+        .skill-icon small {
+            font-size: 0.75rem;
+            color: #777;
+        }
+
+        .contact-section {
+            background-color: #e9ecef;
+            padding: 80px 0;
+        }
+
+        .contact-section .btn {
+            border-radius: 20px;
+            padding: 12px 25px;
+            margin: 10px 15px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .contact-section .btn:hover {
+            transform: scale(1.05);
+            background-color: #00d4ff;
+            color: #1a1a2e;
+        }
+
+        footer {
+            background-color: #1a1a2e;
+            color: white;
+            padding: 30px 0;
+        }
+
+        footer a {
+            color: #00d4ff;
+            margin: 0 10px;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #ffffff;
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            .hero-section h1 {
+                font-size: 2.5rem;
+            }
+            .hero-section p {
+                font-size: 1rem;
+            }
+            .portfolio-card img {
+                aspect-ratio: 4 / 3; /* Maintain consistent aspect ratio */
+            }
+            .skill-icon div {
+                width: 80px;
+                height: 80px;
+            }
+            .skill-icon img {
+                width: 35px !important;
+                height: 35px !important;
+            }
+            .nav-link {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Steven</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#portfolio">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container position-relative" style="z-index: 2;">
+            <img src="images/profile.jpg" alt="Steven Photo" class="rounded-circle mb-4" style="width: 160px; height: 160px; object-fit: cover; border: 4px solid #ffffff; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
+            <h1>Hello, I'm Steven</h1>
+            <p>
+                My name is Steven, and I am a Computer and Data Engineering graduate. I am a driven and detail-oriented individual with a passion for technology and a desire to gain practical experience in the industry. Throughout my academic career, I have acquired a strong foundation in computer science, programming languages, and data analysis techniques.
+            </p>
+            <a href="#portfolio" class="btn btn-light mt-3">View My Work</a>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio-section">
+        <div class="container">
+            <h2 class="text-center mb-5">My Portfolio</h2>
+            <div class="row">
+                <div class="col-md-4 mb-5">
+                    <div class="card portfolio-card">
+                        <img src="images/smart-health.png" class="card-img-top" alt="Smart health monitoring by detecting human eyes irises and pupils">
+                        <div class="card-body">
+                            <h5 class="card-title">Smart Health Monitoring System</h5>
+                            <p class="card-text">Developed a system to monitor human eyes' irises and pupils, involving literature review, experiment design, data collection, and statistical hypothesis testing using R.</p>
+                            <p class="text-muted"><strong>Tech:</strong> R, Statistical Analysis</p>
+                            <a href="https://github.com/Sintsun/Smart-health-monitoring-by-detecting-human-eyes-irises-and-pupils" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-5">
+                    <div class="card portfolio-card">
+                        <img src="images/telemedical.jpg" class="card-img-top" alt="Elderly Health Telemedical System">
+                        <div class="card-body">
+                            <h5 class="card-title">Elderly Health Telemedical System</h5>
+                            <p class="card-text">Designed an embedded system for remote elderly healthcare, measuring vital signs (heart rate, blood pressure, etc.) with OLED, e-paper, and RFID integration.</p>
+                            <p class="text-muted"><strong>Tech:</strong> Embedded Systems, RFID, C++</p>
+                            <a href="https://github.com/Sintsun/Elderly-Health-Telemedical-System" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-5">
+                    <div class="card portfolio-card">
+                        <img src="images/customer-analysis.png" class="card-img-top" alt="Customer Analysis System">
+                        <div class="card-body">
+                            <h5 class="card-title">Customer Analysis System</h5>
+                            <p class="card-text">Developed a retail analysis system using Intel RealSense for 3D store modeling, face tracking, and heatmap generation with Python, OpenCV, and MediaPipe.</p>
+                            <p class="text-muted"><strong>Tech:</strong> Python, OpenCV, MediaPipe</p>
+                            <a href="https://github.com/Sintsun/Retail-CustomerAnalysisSystemUsingRealSense" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+ <!-- Skills Section -->
+ <section id="skills" class="skills-section">
+    <div class="container">
+        <h2 class="text-center mb-5">My Skills</h2>
+        <div class="row text-center">
+            <!-- Python -->
+            <div class="col-md-2 col-4 mb-4 skill-icon">
+                <div>
+                    <a href="https://www.python.org/" target="_blank" title="Visit Python Official Website">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original-wordmark.svg" alt="Python" />
+                    </a>
+                </div>
+                <p class="mt-2">Python <br><small>Proficient</small></p>
+            </div>
+            <!-- C++ -->
+            <div class="col-md-2 col-4 mb-4 skill-icon">
+                <div>
+                    <a href="https://isocpp.org/" target="_blank" title="Visit C++ Official Website">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg" alt="C++" />
+                    </a>
+                </div>
+                <p class="mt-2">C++ <br><small>Intermediate</small></p>
+            </div>
+            <!-- Java -->
+            <div class="col-md-2 col-4 mb-4 skill-icon">
+                <div>
+                    <a href="https://www.java.com/" target="_blank" title="Visit Java Official Website">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original-wordmark.svg" alt="Java" />
+                    </a>
+                </div>
+                <p class="mt-2">Java <br><small>Intermediate</small></p>
+            </div>
+            <!-- R -->
+            <div class="col-md-2 col-4 mb-4 skill-icon">
+                <div>
+                    <a href="https://www.r-project.org/" target="_blank" title="Visit R Official Website">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/r/r-original.svg" alt="R" />
+                    </a>
+                </div>
+                <p class="mt-2">R <br><small>Intermediate</small></p>
+            </div>
+            <!-- SQL -->
+            <div class="col-md-2 col-4 mb-4 skill-icon">
+                <div>
+                    <a href="https://www.mysql.com/" target="_blank" title="Visit MySQL Official Website">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azuresqldatabase/azuresqldatabase-original.svg" alt="SQL" />
+                    </a>
+                </div>
+                <p class="mt-2">SQL <br><small>Intermediate</small></p>
+            </div>
+            <!-- HTML -->
+            <div class="col-md-2 col-4 mb-4 skill-icon">
+                <div>
+                    <a href="https://www.w3.org/html/" target="_blank" title="Visit HTML Official Website">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original-wordmark.svg" alt="HTML" />
+                    </a>
+                </div>
+                <p class="mt-2">HTML <br><small>Intermediate</small></p>
+            </div>
+            <!-- JavaScript -->
+            <div class="col-md-2 col-4 mb-4 skill-icon">
+                <div>
+                    <a href="https://www.ecma-international.org/publications-and-standards/standards/ecma-262/" target="_blank" title="Visit JavaScript Official Website">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="JavaScript" />
+                    </a>
+                </div>
+                <p class="mt-2">JavaScript <br><small>Intermediate</small></p>
+            </div>
+            <!-- PyTorch -->
+            <div class="col-md-2 col-4 mb-4 skill-icon">
+                <div>
+                    <a href="https://pytorch.org/" target="_blank" title="Visit PyTorch Official Website">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pytorch/pytorch-original.svg" alt="PyTorch" />
+                    </a>
+                </div>
+                <p class="mt-2">PyTorch <br><small>Intermediate</small></p>
+            </div>
+            <!-- TensorFlow -->
+            <div class="col-md-2 col-4 mb-4 skill-icon">
+                <div>
+                    <a href="https://www.tensorflow.org/" target="_blank" title="Visit TensorFlow Official Website">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow" />
+                    </a>
+                </div>
+                <p class="mt-2">TensorFlow <br><small>Intermediate</small></p>
+            </div>
+            <!-- AWS -->
+            <div class="col-md-2 col-4 mb-4 skill-icon">
+                <div>
+                    <a href="https://aws.amazon.com/" target="_blank" title="Visit AWS Official Website">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS" />
+                    </a>
+                </div>
+                <p class="mt-2">AWS <br><small>Beginner</small></p>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="text-center mb-5">Get in Touch</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-6 text-center">
+                    <img src="images/profile-contact.jpg" alt="Contact Photo" class="rounded-circle mb-4" style="width: 120px; height: 120px; object-fit: cover; border: 3px solid #ffffff; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
+                    <p>Feel free to reach out to me via email or follow me on LinkedIn!</p>
+                    <div class="d-flex justify-content-center">
+                        <a href="mailto:sintsun01@gmail.com" class="btn btn-primary mx-2">
+                            <i class="fas fa-envelope me-2"></i>Email Me
+                        </a>
+                        <a href="https://www.linkedin.com/in/sin-tsun-tang-291676268/" class="btn btn-primary mx-2" target="_blank">
+                            <i class="fab fa-linkedin me-2"></i>LinkedIn
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>© 2025 Steven. All rights reserved.</p>
+            <div>
+                <a href="https://www.linkedin.com/in/sin-tsun-tang-291676268/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/Sintsun" target="_blank"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-link');
+
+            window.addEventListener('scroll', function () {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    if (pageYOffset >= sectionTop - 80) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href').slice(1) === current) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
