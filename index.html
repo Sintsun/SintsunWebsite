@@ -10,7 +10,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        /* Existing CSS with updates for portfolio card proportions */
+        /* Existing CSS with updates for portfolio card proportions and tech tags */
         html {
             scroll-behavior: smooth;
         }
@@ -105,12 +105,12 @@
 
         .portfolio-card img {
             width: 100%;
-            aspect-ratio: 4 / 3; /* Adjust this ratio based on your image proportions */
-            object-fit: cover; /* Maintains image quality without distortion */
+            aspect-ratio: 4 / 3;
+            object-fit: cover;
         }
 
         .portfolio-card .card-body {
-            padding: 20px;
+            padding: 25px;
         }
 
         .portfolio-card .card-title {
@@ -134,6 +134,50 @@
             border-radius: 20px;
             padding: 10px 20px;
             transition: background-color 0.3s ease;
+        }
+
+        /* Tech Tags Styling */
+        .tech-tags {
+            margin-top: 10px;
+            margin-bottom: 15px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tech-tag {
+            color: #1a1a2e;
+            padding: 5px 12px;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .tech-tag:hover {
+            background-color: #00d4ff;
+            color: #ffffff;
+            transform: scale(1.05);
+        }
+
+        .tech-tag-blue {
+            background-color: #e0f7ff;
+        }
+
+        .tech-tag-green {
+            background-color: #d4f4dd;
+        }
+
+        .tech-tag-purple {
+            background-color: #e6d6fa;
+        }
+
+        .tech-tag-orange {
+            background-color: #ffede1;
+        }
+
+        .tech-tag-red {
+            background-color: #ffd6d6;
         }
 
         .skills-section {
@@ -238,7 +282,7 @@
                 font-size: 1rem;
             }
             .portfolio-card img {
-                aspect-ratio: 4 / 3; /* Maintain consistent aspect ratio */
+                aspect-ratio: 4 / 3;
             }
             .skill-icon div {
                 width: 80px;
@@ -305,6 +349,10 @@
                             <h5 class="card-title">Smart Health Monitoring System</h5>
                             <p class="card-text">Developed a system to monitor human eyes' irises and pupils, involving literature review, experiment design, data collection, and statistical hypothesis testing using R.</p>
                             <p class="text-muted"><strong>Tech:</strong> R, Statistical Analysis</p>
+                            <div class="tech-tags">
+                                <span class="tech-tag tech-tag-blue">R</span>
+                                <span class="tech-tag tech-tag-green">Statistical Analysis</span>
+                            </div>
                             <a href="https://github.com/Sintsun/Smart-health-monitoring-by-detecting-human-eyes-irises-and-pupils" class="btn btn-primary">Learn More</a>
                         </div>
                     </div>
@@ -316,6 +364,11 @@
                             <h5 class="card-title">Elderly Health Telemedical System</h5>
                             <p class="card-text">Designed an embedded system for remote elderly healthcare, measuring vital signs (heart rate, blood pressure, etc.) with OLED, e-paper, and RFID integration.</p>
                             <p class="text-muted"><strong>Tech:</strong> Embedded Systems, RFID, C++</p>
+                            <div class="tech-tags">
+                                <span class="tech-tag tech-tag-purple">Embedded Systems</span>
+                                <span class="tech-tag tech-tag-orange">RFID</span>
+                                <span class="tech-tag tech-tag-blue">C++</span>
+                            </div>
                             <a href="https://github.com/Sintsun/Elderly-Health-Telemedical-System" class="btn btn-primary">Learn More</a>
                         </div>
                     </div>
@@ -327,6 +380,12 @@
                             <h5 class="card-title">Customer Analysis System</h5>
                             <p class="card-text">Developed a retail analysis system using Intel RealSense for 3D store modeling, face tracking, and heatmap generation with Python, OpenCV, and MediaPipe.</p>
                             <p class="text-muted"><strong>Tech:</strong> Python, OpenCV, MediaPipe</p>
+                            <div class="tech-tags">
+                                <span class="tech-tag tech-tag-green">Python</span>
+                                <span class="tech-tag tech-tag-red">OpenCV</span>
+                                <span class="tech-tag tech-tag-purple">MediaPipe</span>
+                                <span class="tech-tag tech-tag-orange">Intel RealSense</span>
+                            </div>
                             <a href="https://github.com/Sintsun/Retail-CustomerAnalysisSystemUsingRealSense" class="btn btn-primary">Learn More</a>
                         </div>
                     </div>
@@ -336,104 +395,103 @@
     </section>
 
     <!-- Skills Section -->
- <!-- Skills Section -->
- <section id="skills" class="skills-section">
-    <div class="container">
-        <h2 class="text-center mb-5">My Skills</h2>
-        <div class="row text-center">
-            <!-- Python -->
-            <div class="col-md-2 col-4 mb-4 skill-icon">
-                <div>
-                    <a href="https://www.python.org/" target="_blank" title="Visit Python Official Website">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original-wordmark.svg" alt="Python" />
-                    </a>
+    <section id="skills" class="skills-section">
+        <div class="container">
+            <h2 class="text-center mb-5">My Skills</h2>
+            <div class="row text-center">
+                <!-- Python -->
+                <div class="col-md-2 col-4 mb-4 skill-icon">
+                    <div>
+                        <a href="https://www.python.org/" target="_blank" title="Visit Python Official Website">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original-wordmark.svg" alt="Python" />
+                        </a>
+                    </div>
+                    <p class="mt-2">Python <br><small>Proficient</small></p>
                 </div>
-                <p class="mt-2">Python <br><small>Proficient</small></p>
-            </div>
-            <!-- C++ -->
-            <div class="col-md-2 col-4 mb-4 skill-icon">
-                <div>
-                    <a href="https://isocpp.org/" target="_blank" title="Visit C++ Official Website">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg" alt="C++" />
-                    </a>
+                <!-- C++ -->
+                <div class="col-md-2 col-4 mb-4 skill-icon">
+                    <div>
+                        <a href="https://isocpp.org/" target="_blank" title="Visit C++ Official Website">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg" alt="C++" />
+                        </a>
+                    </div>
+                    <p class="mt-2">C++ <br><small>Intermediate</small></p>
                 </div>
-                <p class="mt-2">C++ <br><small>Intermediate</small></p>
-            </div>
-            <!-- Java -->
-            <div class="col-md-2 col-4 mb-4 skill-icon">
-                <div>
-                    <a href="https://www.java.com/" target="_blank" title="Visit Java Official Website">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original-wordmark.svg" alt="Java" />
-                    </a>
+                <!-- Java -->
+                <div class="col-md-2 col-4 mb-4 skill-icon">
+                    <div>
+                        <a href="https://www.java.com/" target="_blank" title="Visit Java Official Website">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original-wordmark.svg" alt="Java" />
+                        </a>
+                    </div>
+                    <p class="mt-2">Java <br><small>Intermediate</small></p>
                 </div>
-                <p class="mt-2">Java <br><small>Intermediate</small></p>
-            </div>
-            <!-- R -->
-            <div class="col-md-2 col-4 mb-4 skill-icon">
-                <div>
-                    <a href="https://www.r-project.org/" target="_blank" title="Visit R Official Website">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/r/r-original.svg" alt="R" />
-                    </a>
+                <!-- R -->
+                <div class="col-md-2 col-4 mb-4 skill-icon">
+                    <div>
+                        <a href="https://www.r-project.org/" target="_blank" title="Visit R Official Website">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/r/r-original.svg" alt="R" />
+                        </a>
+                    </div>
+                    <p class="mt-2">R <br><small>Intermediate</small></p>
                 </div>
-                <p class="mt-2">R <br><small>Intermediate</small></p>
-            </div>
-            <!-- SQL -->
-            <div class="col-md-2 col-4 mb-4 skill-icon">
-                <div>
-                    <a href="https://www.mysql.com/" target="_blank" title="Visit MySQL Official Website">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azuresqldatabase/azuresqldatabase-original.svg" alt="SQL" />
-                    </a>
+                <!-- SQL -->
+                <div class="col-md-2 col-4 mb-4 skill-icon">
+                    <div>
+                        <a href="https://www.mysql.com/" target="_blank" title="Visit MySQL Official Website">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azuresqldatabase/azuresqldatabase-original.svg" alt="SQL" />
+                        </a>
+                    </div>
+                    <p class="mt-2">SQL <br><small>Intermediate</small></p>
                 </div>
-                <p class="mt-2">SQL <br><small>Intermediate</small></p>
-            </div>
-            <!-- HTML -->
-            <div class="col-md-2 col-4 mb-4 skill-icon">
-                <div>
-                    <a href="https://www.w3.org/html/" target="_blank" title="Visit HTML Official Website">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original-wordmark.svg" alt="HTML" />
-                    </a>
+                <!-- HTML -->
+                <div class="col-md-2 col-4 mb-4 skill-icon">
+                    <div>
+                        <a href="https://www.w3.org/html/" target="_blank" title="Visit HTML Official Website">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original-wordmark.svg" alt="HTML" />
+                        </a>
+                    </div>
+                    <p class="mt-2">HTML <br><small>Intermediate</small></p>
                 </div>
-                <p class="mt-2">HTML <br><small>Intermediate</small></p>
-            </div>
-            <!-- JavaScript -->
-            <div class="col-md-2 col-4 mb-4 skill-icon">
-                <div>
-                    <a href="https://www.ecma-international.org/publications-and-standards/standards/ecma-262/" target="_blank" title="Visit JavaScript Official Website">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="JavaScript" />
-                    </a>
+                <!-- JavaScript -->
+                <div class="col-md-2 col-4 mb-4 skill-icon">
+                    <div>
+                        <a href="https://www.ecma-international.org/publications-and-standards/standards/ecma-262/" target="_blank" title="Visit JavaScript Official Website">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="JavaScript" />
+                        </a>
+                    </div>
+                    <p class="mt-2">JavaScript <br><small>Intermediate</small></p>
                 </div>
-                <p class="mt-2">JavaScript <br><small>Intermediate</small></p>
-            </div>
-            <!-- PyTorch -->
-            <div class="col-md-2 col-4 mb-4 skill-icon">
-                <div>
-                    <a href="https://pytorch.org/" target="_blank" title="Visit PyTorch Official Website">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pytorch/pytorch-original.svg" alt="PyTorch" />
-                    </a>
+                <!-- PyTorch -->
+                <div class="col-md-2 col-4 mb-4 skill-icon">
+                    <div>
+                        <a href="https://pytorch.org/" target="_blank" title="Visit PyTorch Official Website">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pytorch/pytorch-original.svg" alt="PyTorch" />
+                        </a>
+                    </div>
+                    <p class="mt-2">PyTorch <br><small>Intermediate</small></p>
                 </div>
-                <p class="mt-2">PyTorch <br><small>Intermediate</small></p>
-            </div>
-            <!-- TensorFlow -->
-            <div class="col-md-2 col-4 mb-4 skill-icon">
-                <div>
-                    <a href="https://www.tensorflow.org/" target="_blank" title="Visit TensorFlow Official Website">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow" />
-                    </a>
+                <!-- TensorFlow -->
+                <div class="col-md-2 col-4 mb-4 skill-icon">
+                    <div>
+                        <a href="https://www.tensorflow.org/" target="_blank" title="Visit TensorFlow Official Website">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow" />
+                        </a>
+                    </div>
+                    <p class="mt-2">TensorFlow <br><small>Intermediate</small></p>
                 </div>
-                <p class="mt-2">TensorFlow <br><small>Intermediate</small></p>
-            </div>
-            <!-- AWS -->
-            <div class="col-md-2 col-4 mb-4 skill-icon">
-                <div>
-                    <a href="https://aws.amazon.com/" target="_blank" title="Visit AWS Official Website">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS" />
-                    </a>
+                <!-- AWS -->
+                <div class="col-md-2 col-4 mb-4 skill-icon">
+                    <div>
+                        <a href="https://aws.amazon.com/" target="_blank" title="Visit AWS Official Website">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS" />
+                        </a>
+                    </div>
+                    <p class="mt-2">AWS <br><small>Beginner</small></p>
                 </div>
-                <p class="mt-2">AWS <br><small>Beginner</small></p>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <!-- Contact Section -->
     <section id="contact" class="contact-section">
@@ -441,7 +499,7 @@
             <h2 class="text-center mb-5">Get in Touch</h2>
             <div class="row justify-content-center">
                 <div class="col-md-6 text-center">
-                    <img src="images/profile-contact.jpg" alt="Contact Photo" class="rounded-circle mb-4" style="width: 120px; height: 120px; object-fit: cover; border: 3px solid #ffffff; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
+                    <img src="images/profile-contact.png" alt="Contact Photo" class="rounded-circle mb-4" style="width: 120px; height: 120px; object-fit: cover; border: 3px solid #ffffff; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
                     <p>Feel free to reach out to me via email or follow me on LinkedIn!</p>
                     <div class="d-flex justify-content-center">
                         <a href="mailto:sintsun01@gmail.com" class="btn btn-primary mx-2">
@@ -457,7 +515,7 @@
     </section>
 
     <!-- Footer -->
-    <footer>
+    <footer>    
         <div class="container">
             <p>© 2025 Steven. All rights reserved.</p>
             <div>
