@@ -227,6 +227,56 @@
             color: #777;
         }
 
+        .certificates-section {
+            background-color: #ffffff;
+            padding: 80px 0;
+        }
+
+        .certificate-card {
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background-color: #ffffff;
+        }
+
+        .certificate-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .certificate-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .certificate-card .card-body {
+            padding: 25px;
+        }
+
+        .certificate-card .card-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #1a1a2e;
+        }
+
+        .certificate-card .card-text {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .certificate-card .btn {
+            border-radius: 20px;
+            padding: 8px 20px;
+            font-size: 0.9rem;
+            transition: background-color 0.3s ease;
+        }
+
         .contact-section {
             background-color: #e9ecef;
             padding: 80px 0;
@@ -315,6 +365,9 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#skills">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#certificates">Certificates</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#contact">Contact</a>
@@ -543,6 +596,25 @@
                         </a>
                     </div>
                     <p class="mt-2">AWS <br><small>Beginner</small></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificates Section -->
+    <section id="certificates" class="certificates-section">
+        <div class="container">
+            <h2 class="text-center mb-5">My Certificates</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card certificate-card">
+                        <img src="images/aws-certified-ai-practitioner.png" class="card-img-top" alt="AWS Certified AI Practitioner">
+                        <div class="card-body">
+                            <h5 class="card-title">AWS Certified AI Practitioner</h5>
+                            <p class="card-text">Amazon Web Services 認證的人工智慧實踐者證書，證明在 AWS 雲端平台上使用 AI 和機器學習服務的能力。</p>
+                            <a href="https://www.credly.com/badges/107757e2-4d51-44d1-b447-7252db3deebb/linked_in?t=t4cj23" class="btn btn-primary" target="_blank">查看證書</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
