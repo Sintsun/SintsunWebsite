@@ -250,6 +250,17 @@
             height: auto;
             display: block;
             margin: 0 auto 15px;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .certificate-item a {
+            display: block;
+            text-decoration: none;
+        }
+
+        .certificate-item a:hover img {
+            transform: scale(1.05);
+            opacity: 0.9;
         }
 
         @media (max-width: 768px) {
@@ -594,13 +605,17 @@
             <div class="row justify-content-center">
                 <div class="col-md-6 col-lg-4 mb-4">
                     <div class="certificate-item">
-                        <img src="images/aws-certified-ai-practitioner.png" alt="AWS Certified AI Practitioner" loading="lazy">
+                        <a href="https://www.credly.com/badges/107757e2-4d51-44d1-b447-7252db3deebb/linked_in?t=t4cj23" target="_blank" rel="noopener noreferrer" aria-label="查看 AWS Certified AI Practitioner 證書">
+                            <img src="images/aws-certified-ai-practitioner.png" alt="AWS Certified AI Practitioner" loading="lazy">
+                        </a>
                         <h5>AWS Certified AI Practitioner</h5>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 mb-4">
                     <div class="certificate-item">
-                        <img src="images/aws-certified-cloud-practitioner.png" alt="AWS Certified Cloud Practitioner" loading="lazy">
+                        <a href="https://www.credly.com/badges/9b5ef6e4-5dce-444e-959a-b136bc73bd0a" target="_blank" rel="noopener noreferrer" aria-label="查看 AWS Certified Cloud Practitioner 證書">
+                            <img src="images/aws-certified-cloud-practitioner.png" alt="AWS Certified Cloud Practitioner" loading="lazy">
+                        </a>
                         <h5>AWS Certified Cloud Practitioner</h5>
                     </div>
                 </div>
