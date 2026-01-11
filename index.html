@@ -252,6 +252,12 @@
             margin: 0 auto 15px;
         }
 
+        @media (max-width: 768px) {
+            .certificate-item img {
+                max-width: 250px;
+            }
+        }
+
         .certificate-item h5 {
             font-size: 1.3rem;
             font-weight: 600;
@@ -362,7 +368,7 @@
     <!-- Hero Section -->
     <section id="home" class="hero-section">
         <div class="container position-relative" style="z-index: 2;">
-            <img src="images/profile.jpg" alt="Steven Photo" class="rounded-circle mb-4" style="width: 160px; height: 160px; object-fit: cover; border: 4px solid #ffffff; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
+            <img src="images/profile.jpg" alt="Steven Photo" class="rounded-circle mb-4" loading="eager" style="width: 160px; height: 160px; object-fit: cover; border: 4px solid #ffffff; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
             <h1>Hello, I'm Steven</h1>
             <p>
                 My name is Steven, and I am a Computer and Data Engineering graduate. I am a driven and detail-oriented individual with a passion for technology and a desire to gain practical experience in the industry. Throughout my academic career, I have acquired a strong foundation in computer science, programming languages, and data analysis techniques.
@@ -378,7 +384,7 @@
         <div class="row">
             <div class="col-md-4 mb-5">
                 <div class="card portfolio-card">
-                    <img src="images/smart-health.png" class="card-img-top" alt="Smart health monitoring by detecting human eyes irises and pupils">
+                    <img src="images/smart-health.png" class="card-img-top" alt="Smart health monitoring by detecting human eyes irises and pupils" loading="lazy">
                     <div class="card-body">
                         <h5 class="card-title">Smart Health Monitoring System</h5>
                         <p class="card-text">Developed a system to monitor human eyes' irises and pupils, involving literature review, experiment design, data collection, and statistical hypothesis testing using R.</p>
@@ -393,7 +399,7 @@
             </div>
             <div class="col-md-4 mb-5">
                 <div class="card portfolio-card">
-                    <img src="images/telemedical.jpg" class="card-img-top" alt="Elderly Health Telemedical System">
+                    <img src="images/telemedical.jpg" class="card-img-top" alt="Elderly Health Telemedical System" loading="lazy">
                     <div class="card-body">
                         <h5 class="card-title">Elderly Health Telemedical System</h5>
                         <p class="card-text">Designed an embedded system for remote elderly healthcare, measuring vital signs (heart rate, blood pressure, etc.) with OLED, e-paper, and RFID integration.</p>
@@ -409,7 +415,7 @@
             </div>
             <div class="col-md-4 mb-5">
                 <div class="card portfolio-card">
-                    <img src="images/customer-analysis.png" class="card-img-top" alt="Customer Analysis System">
+                    <img src="images/customer-analysis.png" class="card-img-top" alt="Customer Analysis System" loading="lazy">
                     <div class="card-body">
                         <h5 class="card-title">Customer Analysis System</h5>
                         <p class="card-text">Developed a retail analysis system using Intel RealSense for 3D store modeling, face tracking, and heatmap generation with Python, OpenCV, and MediaPipe.</p>
@@ -426,7 +432,7 @@
             </div>
             <div class="col-md-4 mb-5">
                 <div class="card portfolio-card">
-                    <img src="images/money-flash.png" class="card-img-top" alt="Money Flash Budgeting App">
+                    <img src="images/money-flash.png" class="card-img-top" alt="Money Flash Budgeting App" loading="lazy">
                     <div class="card-body">
                         <h5 class="card-title">Money Flash Budgeting App</h5>
                         <p class="card-text">Designed a mobile budgeting app for iOS to help young Hong Kong individuals develop savings habits, featuring expense tracking, budget analysis, and card integration using Figma for UI design.</p>
@@ -445,7 +451,7 @@
             </div>
             <div class="col-md-4 mb-5">
                 <div class="card portfolio-card">
-                    <img src="images/connect-four.png" class="card-img-top" alt="Connect Four Game">
+                    <img src="images/connect-four.png" class="card-img-top" alt="Connect Four Game" loading="lazy">
                     <div class="card-body">
                         <h5 class="card-title">Connect Four Game</h5>
                         <p class="card-text">Developed a classic Connect Four game as a school assignment in two versions (C++ and Java), featuring a console-based interface with win detection and player alternation.</p>
@@ -463,7 +469,7 @@
             </div>
             <div class="col-md-4 mb-5">
                 <div class="card portfolio-card">
-                    <img src="images/n8n-workflow.png" class="card-img-top" alt="n8n Email Automation Workflow">
+                    <img src="images/n8n-workflow.png" class="card-img-top" alt="n8n Email Automation Workflow" loading="lazy">
                     <div class="card-body">
                         <h5 class="card-title">n8n Email Automation Workflow</h5>
                         <p class="card-text">Built an n8n workflow to automate Gmail email processing, using Grok AI for content categorization, attachment detection, and storing results in a Notion database.</p>
@@ -588,13 +594,13 @@
             <div class="row justify-content-center">
                 <div class="col-md-6 col-lg-4 mb-4">
                     <div class="certificate-item">
-                        <img src="images/aws-certified-ai-practitioner.png" alt="AWS Certified AI Practitioner">
+                        <img src="images/aws-certified-ai-practitioner.png" alt="AWS Certified AI Practitioner" loading="lazy">
                         <h5>AWS Certified AI Practitioner</h5>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 mb-4">
                     <div class="certificate-item">
-                        <img src="images/aws-certified-cloud-practitioner.png" alt="AWS Certified Cloud Practitioner">
+                        <img src="images/aws-certified-cloud-practitioner.png" alt="AWS Certified Cloud Practitioner" loading="lazy">
                         <h5>AWS Certified Cloud Practitioner</h5>
                     </div>
                 </div>
@@ -608,7 +614,7 @@
             <h2 class="text-center mb-5">Get in Touch</h2>
             <div class="row justify-content-center">
                 <div class="col-md-6 text-center">
-                    <img src="images/profile-contact.jpg" alt="Contact Photo" class="rounded-circle mb-4" style="width: 120px; height: 120px; object-fit: cover; border: 3px solid #ffffff; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
+                    <img src="images/profile-contact.jpg" alt="Contact Photo" class="rounded-circle mb-4" loading="lazy" style="width: 120px; height: 120px; object-fit: cover; border: 3px solid #ffffff; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
                     <p>Feel free to reach out to me via email or follow me on LinkedIn!</p>
                     <div class="d-flex justify-content-center">
                         <a href="mailto:sintsun01@gmail.com" class="btn btn-primary mx-2">
