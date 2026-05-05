@@ -497,19 +497,22 @@
             </div>
             <div class="col-md-4 mb-5">
                 <div class="card portfolio-card">
-                    <img src="images/earnings-grok-agent.png" class="card-img-top" alt="Earnings Grok Agent — AI 財報情緒分析介面" loading="lazy">
+                    <img src="images/daily-tech-ai-jobs-workflow.png" class="card-img-top" alt="Daily Tech & AI Job Opportunities — n8n workflow diagram" loading="lazy">
                     <div class="card-body">
-                        <h5 class="card-title">Earnings Grok Agent</h5>
-                        <p class="card-text">以 LangGraph 串接 Yahoo Finance 新聞與基本面、可選 Reddit 與 Grok X 搜尋，並以 xAI Grok 產出繁體中文結構化財報情緒分析；含約六個月收盤價走勢圖與 FastAPI 網頁介面。</p>
-                        <p class="text-muted"><strong>Tech:</strong> Python, LangGraph, FastAPI, xAI Grok, yfinance</p>
+                        <h5 class="card-title">Daily Tech &amp; AI Job Opportunities</h5>
+                        <p class="card-text">An n8n workflow that scrapes Tech/AI job postings (Hong Kong + Remote) via SerpApi, filters with an LLM on AWS Bedrock, dedupes & stores results in DynamoDB, and sends a daily email report.</p>
+                        <p class="text-muted"><strong>Tech:</strong> n8n, SerpApi, AWS Bedrock, DynamoDB, Gmail</p>
                         <div class="tech-tags">
-                            <span class="tech-tag tech-tag-green">Python</span>
-                            <span class="tech-tag tech-tag-purple">LangGraph</span>
-                            <span class="tech-tag tech-tag-blue">FastAPI</span>
-                            <span class="tech-tag tech-tag-orange">xAI Grok</span>
-                            <span class="tech-tag tech-tag-red">yfinance</span>
+                            <span class="tech-tag tech-tag-blue">n8n</span>
+                            <span class="tech-tag tech-tag-green">SerpApi</span>
+                            <span class="tech-tag tech-tag-purple">AWS Bedrock</span>
+                            <span class="tech-tag tech-tag-orange">DynamoDB</span>
+                            <span class="tech-tag tech-tag-red">Gmail</span>
                         </div>
-                        <a href="https://github.com/Sintsun/EarningsGrokAgent" class="btn btn-primary">GitHub</a>
+                        <div class="d-flex gap-2 flex-wrap">
+                            <a href="workflows/daily-tech-ai-job-opportunities.json" class="btn btn-primary" download>Download Workflow JSON</a>
+                            <a href="images/daily-tech-ai-jobs-workflow.png" class="btn btn-primary" target="_blank" rel="noopener noreferrer">View Diagram</a>
+                        </div>
                     </div>
                 </div>
             </div>

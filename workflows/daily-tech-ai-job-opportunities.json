@@ -1,0 +1,73 @@
+{
+  "name": "Daily Tech & AI Job Opportunities (sanitized)",
+  "nodes": [
+    {
+      "parameters": {
+        "triggerTimes": {
+          "item": [
+            {
+              "mode": "everyDay",
+              "hour": 8,
+              "minute": 0
+            }
+          ]
+        }
+      },
+      "id": "ScheduleTrigger",
+      "name": "Schedule Trigger",
+      "type": "n8n-nodes-base.cron",
+      "typeVersion": 1,
+      "position": [
+        200,
+        240
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "/*\n  This is a sanitized placeholder export for public sharing.\n  In your n8n instance, replace this workflow with the real exported JSON.\n*/\n\nreturn [{\n  query: 'AI engineer jobs Hong Kong OR remote',\n  location: 'Hong Kong / Remote',\n  note: 'Configure SERPAPI_API_KEY, AWS (Bedrock + DynamoDB), Gmail OAuth2 in n8n credentials.'\n}];\n"
+      },
+      "id": "Placeholder",
+      "name": "Code in JavaScript",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        420,
+        240
+      ]
+    }
+  ],
+  "connections": {
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {},
+  "versionId": "sanitized",
+  "meta": {
+    "templateCredsSetup": [
+      "SerpApi",
+      "AWS (Bedrock + DynamoDB)",
+      "Gmail OAuth2"
+    ],
+    "env": {
+      "SERPAPI_API_KEY": "your_key_here"
+    }
+  },
+  "tags": [
+    "n8n",
+    "SerpApi",
+    "AWS Bedrock",
+    "DynamoDB",
+    "Gmail"
+  ]
+}
+
