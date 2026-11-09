@@ -229,7 +229,7 @@ function App() {
   const closeMenu = () => setMenuOpen(false)
 
   return (
-    <div className="site-shell">
+    <div className="site-shell" data-build="2026-11-09-2">
       <div className="ambient ambient-one" aria-hidden="true" />
       <div className="ambient ambient-two" aria-hidden="true" />
       <div className="ambient ambient-three" aria-hidden="true" />
@@ -396,4 +396,3 @@ function App() {
 }
 
 export default App
-
