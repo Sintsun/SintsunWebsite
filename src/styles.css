@@ -125,6 +125,7 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--cyan); outline-
 .hero-orbit { position: absolute; width: 430px; height: 430px; border: 1px solid rgba(199,180,255,.14); border-radius: 50%; transform: rotate(-24deg) scaleY(.62); }
 .orbit-two { width: 390px; height: 390px; border-color: rgba(131,219,240,.1); transform: rotate(52deg) scaleY(.72); }
 .float-chip { position: absolute; z-index: 3; min-height: 47px; padding: 9px 13px; display: inline-flex; align-items: center; gap: 9px; border: 1px solid rgba(228,225,255,.2); border-radius: 15px; color: #eeeafa; background: linear-gradient(125deg, rgba(52,52,80,.76), rgba(24,25,43,.62)); backdrop-filter: blur(20px); box-shadow: 0 14px 32px rgba(0,0,0,.25), inset 0 1px rgba(255,255,255,.09); font-size: 11px; }
+.profile-frame .float-chip { position: absolute; }
 .chip-code { top: -48px; left: -24px; animation: chip-float 6s ease-in-out infinite; }
 .chip-code svg { color: #91d8f1; }
 .chip-sparkle { color: #b5a2ff; font-style: normal; }
