@@ -283,9 +283,9 @@ function App() {
               <div className="profile-frame glass-card">
                 <img src="./images/profile.jpg" alt="Steven Tang" fetchPriority="high" />
                 <div className="profile-caption"><span className="caption-dot" /><span>{t.role}</span><span className="caption-divider">/</span><span>Hong Kong</span></div>
+                <div className="float-chip chip-code glass-card"><Code2 size={17} /><span>Python</span><i className="chip-sparkle">✦</i></div>
+                <div className="float-chip chip-ai glass-card"><span className="ai-chip-icon"><Sparkles size={15} /></span><span>AI × Automation</span></div>
               </div>
-              <div className="float-chip chip-code glass-card"><Code2 size={17} /><span>Python</span><i className="chip-sparkle">✦</i></div>
-              <div className="float-chip chip-ai glass-card"><span className="ai-chip-icon"><Sparkles size={15} /></span><span>AI × Automation</span></div>
               <div className="visual-index">01 <span /> 06</div>
             </div>
           </div>
